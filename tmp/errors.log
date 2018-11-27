@@ -1,0 +1,46 @@
+[2018-11-08 13:55:26] Текст ошибки: Контроллер app\controllers\TraningsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-08 14:16:49] Текст ошибки: Контроллер app\controllers\ProgramsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-08 19:39:29] Текст ошибки: Метод app\controllers\ExercisesController::grudiAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-08 20:52:42] Текст ошибки: Страница не найдена | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 41
+=================
+[2018-11-08 20:52:56] Текст ошибки: Страница не найдена | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 41
+=================
+[2018-11-08 20:53:08] Текст ошибки: Страница не найдена | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 41
+=================
+[2018-11-08 21:08:46] Текст ошибки: Страница не найдена | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 41
+=================
+[2018-11-08 21:28:23] Текст ошибки: Контроллер app\controllers\TraningsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-09 00:05:10] Текст ошибки: Метод app\controllers\ExercisesController::jivotAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-09 00:20:54] Текст ошибки: Контроллер app\controllers\ProgramsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-09 00:58:27] Текст ошибки: Метод app\controllers\ExercisesController::jivotAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-11 11:51:56] Текст ошибки: Контроллер app\controllers\PublicController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-12 17:03:53] Текст ошибки: Страница не найдена | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 41
+=================
+[2018-11-12 17:15:34] Текст ошибки: Контроллер app\controllers\ProgramsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-12 17:23:20] Текст ошибки: Контроллер app\controllers\TraningsController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-12 17:24:04] Текст ошибки: Метод app\controllers\ExercisesController::grudiAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-12 17:27:21] Текст ошибки: Метод app\controllers\AppController::indexAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-12 18:17:00] Текст ошибки: Контроллер app\controllers\ConfigController не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 38
+=================
+[2018-11-12 18:20:41] Текст ошибки: Метод app\controllers\AppController::controllersAction не найден | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/vendor/fw/core/Router.php | Строка: 35
+=================
+[2018-11-14 22:38:34] Текст ошибки: Class 'app\widgets\formFeedback\FormFeedback' not found | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/app/views/Main/index.php | Строка: 2
+=================
+[2018-11-14 22:39:06] Текст ошибки: Class 'app\widgets\formFeedback\FormFeedback' not found | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/app/views/Main/index.php | Строка: 2
+=================
+[2018-11-14 22:39:34] Текст ошибки: Class 'app\widgets\formFeedback\FormFeedback' not found | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/app/views/Main/index.php | Строка: 2
+=================
+[2018-11-14 22:39:35] Текст ошибки: Class 'app\widgets\formFeedback\FormFeedback' not found | Файл: /home/u3983/domains/wd.u3983.red.elastictech.org/app/views/Main/index.php | Строка: 2
+=================

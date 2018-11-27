@@ -1,0 +1,19 @@
+a:2:{s:4:"data";s:745:"<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="plechi">Плечи</a>
+</div>
+<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="grudi">Грудь</a>
+</div>
+<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="spina">Спина</a>
+</div>
+<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="ruki">Руки</a>
+</div>
+<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="nogi">Ноги</a>
+</div>
+<div class="col s12 xl2 m6 center-align">
+        <a class="collection-item flow-text" href="jivot">Живот</a>
+</div>
+";s:8:"end_time";i:1542046196;}

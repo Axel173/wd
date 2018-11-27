@@ -1,0 +1,92 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.w500 {
+    max-width: 500px;
+}
+
+.bloc_center {
+    margin: 0 auto;
+}
+
+.card.card-login {
+    display: flex;
+}
+
+.card.card-login .card-login-splash {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    background-position: center;
+    background-image: url("../img/desktopwallpapers.org.ua-19429.jpg");
+    min-height: 400px;
+}
+
+.card.card-login .card-login-splash h1, .card.card-login .card-login-splash h2, .card.card-login .card-login-splash h3, .card.card-login .card-login-splash h4, .card.card-login .card-login-splash h5, .card.card-login .card-login-splash .settings-title {
+    margin-top: 0;
+}
+
+.card.card-login .card-login-splash img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    display: block;
+    z-index: -1;
+}
+
+.card.card-login .card-content {
+    flex: 1;
+}
+
+.breadcrumb::before {
+    color: black;
+}
+
+.exercise .card-image img {
+    width: auto;
+}
+
+.exercise .card-content {
+    line-height: 1;
+}
+
+.exercises_menu .col {
+    padding: 0;
+}
+
+@media only screen and (max-width: 601px) {
+    .card.card-login {
+        flex-direction: column;
+    }
+}
