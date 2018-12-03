@@ -14,11 +14,11 @@
                                     <? $program_id = $program->id;
                                     foreach ($programs['days'] as $day_key => $day): ?>
                                         <? foreach ($programs['programs_list'] as $key => $item): ?>
-                                            <? if ($day->id == $item->day_id and $item->id == $program_id): ?>
+                                            <? if ($day->id == $item->day_id and $item->program_id == $program_id): ?>
                                                 <li class="tab col s2"><a class="active"
                                                                           href="#tab<?= $key ?>"><?= $day['name'] ?></a>
                                                 </li>
-                                                <? break; ?>
+                                                <? break 1; ?>
                                             <? endif; ?>
                                         <? endforeach; ?>
                                     <? endforeach; ?>
