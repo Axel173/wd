@@ -143,10 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         M.AutoInit();
-        // var tabs_elem = document.getElementById('tabs-swipe');
-        // var tabs = M.Tabs.init(tabs_elem, {
-        //     swipeable: true,
-        // });
 
         var datepickerElems = document.querySelectorAll('.datepicker');
         var datepickerInstances = M.Datepicker.init(datepickerElems, {

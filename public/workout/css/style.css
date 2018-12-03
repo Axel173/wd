@@ -85,6 +85,27 @@ main {
     padding: 0;
 }
 
+.workout-tabs .tab a {
+    color: rgba(0, 0, 0, 0.61);
+}
+
+.workout-tabs .tab a:focus, .workout-tabs .tab a:focus.active {
+    background-color: rgba(38, 166, 154, 0.18);
+}
+
+.workout-tabs .tab a:hover, .workout-tabs .tab a.active {
+    color: black;
+}
+
+.workout-tabs .tab.disabled a,
+.workout-tabs .tab.disabled a:hover {
+    color: rgba(238, 110, 115, 0.4);
+}
+
+.workout-tabs .indicator {
+    background-color: #26a69a;
+}
+
 @media only screen and (max-width: 601px) {
     .card.card-login {
         flex-direction: column;
