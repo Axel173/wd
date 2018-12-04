@@ -30,7 +30,7 @@ class AppController extends Controller
         parent::__construct($route);
         //mail("alex310197@mail.ru", "My Subject", "Line 1\nLine 2\nLine 3");
         new AppModel();
-        \R::fancyDebug(true);
+        //\R::fancyDebug(true);
         //debug($route);
 
         //App::$app->setProperty('langs', Language::getLanguages());
