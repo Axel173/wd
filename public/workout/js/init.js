@@ -125,6 +125,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         progressBar.style.width = "50%";
 
+                        var autocompleteElems = document.querySelectorAll('.autocomplete');
+                        var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
+                            data: {
+                                "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
+                            },
+                        });
+
                     } catch (err) {
                         showErrorModal('Произошла ошибка', err);
                         // обработка ошибки
@@ -143,6 +150,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         M.AutoInit();
+
+        var autocompleteElems = document.querySelectorAll('.autocomplete');
+        var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
+            data: {
+                "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
+            },
+        });
 
         var datepickerElems = document.querySelectorAll('.datepicker');
         var datepickerInstances = M.Datepicker.init(datepickerElems, {

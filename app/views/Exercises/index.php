@@ -8,7 +8,7 @@
     'cacheKey' => 'exercises'.$this->route['url'],
     'route' => $this->route
 ]); ?>
-<nav class="grey">
+<!--<nav class="transparent">
     <div class="nav-wrapper">
         <form>
             <div class="input-field">
@@ -18,7 +18,18 @@
             </div>
         </form>
     </div>
-</nav>
+</nav>-->
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">search</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input">Например "Попеременные сгибания рук"</label>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="col s12">
     <div class="row">
         <? if (isset($exercises)): ?>
