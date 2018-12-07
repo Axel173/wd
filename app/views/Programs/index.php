@@ -3,7 +3,12 @@
     <? foreach ($programs as $program_key => $program): ?>
         <ul class="collapsible popout">
             <li>
-                <div class="collapsible-header"><i class="material-icons">bookmark</i><?= $program['name'] ?>
+                <div class="collapsible-header avatar"><i class="material-icons">bookmark</i><?= $program['name'] ?>
+                    <? if (isset($program['user'])): ?>
+                        <img title="<?= $program['user'][$program['user_id']]['name'] . ' ' . $program['user'][$program['user_id']]['surname'] ?>" src="/uploads/images/users/<?= $program['user'][$program['user_id']]['avatar'] ?>" alt=""
+                             class="collapsible-header__avatar circle">
+                    <? endif; ?>
+
                 </div>
                 <div class="collapsible-body">
                     <div class="col s12">

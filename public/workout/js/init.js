@@ -17,7 +17,7 @@ function progressPage() {
         progressBar.style.width = "100%";
     };
 }
-
+progressPage();
 function showErrorModal(title, body) {
     var elem = document.createElement('div');
     elem.innerHTML = '<div class="modal-content">\n' +
@@ -65,7 +65,7 @@ function hideOverlay() {
     elem.remove();
 }
 
-progressPage();
+
 
 document.addEventListener('DOMContentLoaded', function () {
         var res;
@@ -96,37 +96,36 @@ document.addEventListener('DOMContentLoaded', function () {
             $.ajax({
                 url: url,
                 type: 'GET',
-                /*data: {
-                    answers: code,
-                    endTimeTest: endTimeTest
-                },*/
                 async: true,
                 cache: false,
+                dataType: 'json',
                 success: function (res) {
                     try {
-                        jsonRes = JSON.parse(res);
-                        if (jsonRes.data) {
+                        //jsonRes = JSON.parse(res);
+                        if (res) {
 
-                            $('.section:eq(0)').html(jsonRes.data.attributes.body);
+                            $('.section:eq(0)').html(res.data.attributes.body);
                         }
 
                         if (addEntry == true) {
 
                             var stateData = {
                                 "location": url,
-                                "title": jsonRes.data.attributes.title
+                                "title": res.data.attributes.title
                             };
                             console.log(stateData);
 
                             // Add History Entry using pushState
                             history.pushState(stateData, '', url);
-                            document.title = jsonRes.data.attributes.title;
+                            document.title = res.data.attributes.title;
                         }
 
                         progressBar.style.width = "50%";
 
                         var autocompleteElems = document.querySelectorAll('.autocomplete');
                         var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
+                            minLength: 3,
+                            limit: 5,
                             data: {
                                 "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
                             },
@@ -136,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         showErrorModal('Произошла ошибка', err);
                         // обработка ошибки
                     }
-                    //$('.section:eq(0)').html(jsonRes.template);
                 },
                 error: function (jqxhr, status, errorMsg) {
                     showErrorModal('Не получилось выполнить запрос', 'Статус: ' + status + '<br> Ошибка: ' + errorMsg);
@@ -144,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 complete: function (data) {
                     hideOverlay();
                     progressBar.style.width = "100%";
-                    //$('.ajax-loader').hide();
                 }
             });
         }
@@ -153,10 +150,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var autocompleteElems = document.querySelectorAll('.autocomplete');
         var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
-            data: {
-                "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
-            },
+            minLength: 3,
+            limit: 5,
         });
+
+        $('.autocomplete').on('change', function () {
+                if ($(this).val().length > 3) {
+
+                }
+            }
+        );
 
         var datepickerElems = document.querySelectorAll('.datepicker');
         var datepickerInstances = M.Datepicker.init(datepickerElems, {

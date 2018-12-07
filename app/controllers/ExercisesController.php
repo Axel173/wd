@@ -67,10 +67,10 @@ class ExercisesController extends AppController
         } else {
             $this->set(compact('exercises', 'pagination', 'total'));
         }
+    }
 
-
-
-
+    public function searchAction()
+    {
 
     }
 
