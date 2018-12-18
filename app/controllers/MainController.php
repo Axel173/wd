@@ -12,7 +12,7 @@ use fw\base\View;
  */
 
 
-class MainController extends AppController{
+class MainController extends AuthController{
 
     public function indexAction(){
         //$model = new Main;
@@ -33,9 +33,21 @@ class MainController extends AppController{
         $this->setTitle('Workout :: Главная страница');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
-        if(!$this->is_auth)
-        {
-            redirect('/personal/login');
+
+        if ($this->isAjax()) {
+            $template = $this->getTmp('index');
+            $data = array(
+                'data' => array(
+                    'type' => 'main',
+                    'attributes' => array(
+                        "title" => $this->title,
+                        "body" => $template,
+                    ),
+                ),
+
+            );
+            echo json_encode($data);
+            die();
         }
         //mail("alex310197@mail.ru", "My Subject", "Line 1\nLine 2\nLine 3");
     }

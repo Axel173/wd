@@ -1,14 +1,16 @@
-<? //debug($programs); ?>
+<? //dd($programs); ?>
 <? if (isset($programs)): ?>
     <? foreach ($programs as $program_key => $program): ?>
         <ul class="collapsible popout">
             <li>
-                <div class="collapsible-header avatar"><i class="material-icons">bookmark</i><?= $program['name'] ?>
+                <a href="/train/<?=$program['alias']?>" class="left ajax"><i class="material-icons medium red-text red-lighten-2" style="line-height: 0.9">play_circle_filled</i></a>
+                <div class="collapsible-header avatar">
+                    <i class="material-icons">bookmark</i><?= $program['name'] ?>
                     <? if (isset($program['user'])): ?>
-                        <img title="<?= $program['user'][$program['user_id']]['name'] . ' ' . $program['user'][$program['user_id']]['surname'] ?>" src="/uploads/images/users/<?= $program['user'][$program['user_id']]['avatar'] ?>" alt=""
+                        <img title="<?= $program['user'][$program['user_id']]['name'] . ' ' . $program['user'][$program['user_id']]['surname'] ?>"
+                             src="/uploads/images/users/<?= $program['user'][$program['user_id']]['avatar'] ?>" alt=""
                              class="collapsible-header__avatar circle">
                     <? endif; ?>
-
                 </div>
                 <div class="collapsible-body">
                     <div class="col s12">

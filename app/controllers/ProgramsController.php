@@ -6,15 +6,12 @@ namespace app\controllers;
  * Description of Main
  *
  */
-class ProgramsController extends AppController
+class ProgramsController extends AuthController
 {
 
     public function indexAction()
     {
 
-        if (!$this->is_auth) {
-            redirect('/personal/login');
-        }
         $programs = array();
         $programs_bean = \R::findMulti('programs, programs_list, exercises, days, users',
             'SELECT programs.*, programs_list.*, exercises.*, days.*, users.* FROM programs 
@@ -46,12 +43,29 @@ class ProgramsController extends AppController
         $programs['programs_list'] = reset($programs_bean['programs_list']);
         $programs['exercises'] = reset($programs_bean['exercises']);
         $programs['days'] = reset($programs_bean['days']);*/
-
-        $this->set(compact('programs'));
-
         $this->setTitle('Workout :: Программы тренировок');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
+
+        if ($this->isAjax()) {
+            $template = $this->getTmp('index', compact('programs'));
+            $data = array(
+                'data' => array(
+                    'type' => 'programs',
+                    'attributes' => array(
+                        "title" => $this->title,
+                        "body" => $template,
+                    ),
+                ),
+
+            );
+            echo json_encode($data);
+            die();
+        } else {
+            $this->set(compact('programs'));
+        }
+
+
 
     }
 

@@ -6,13 +6,10 @@ namespace app\controllers;
  * Description of Main
  *
  */
-class ExerciseController extends AppController
+class ExerciseController extends AuthController
 {
     public function viewAction()
     {
-        if (!$this->is_auth) {
-            redirect('/personal/login');
-        }
         $alias = clear($this->route['alias']);
 
         $exercises = \R::findMulti('exercises, groups', 'SELECT exercises.*, groups.*, groups.alias AS group_alias FROM groups

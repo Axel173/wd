@@ -4,6 +4,7 @@ use fw\Router;
 
 Router::add('^exercise/(?P<alias>[\w]+)?$', ['controller' => 'exercise', 'action' => 'view']);
 Router::add('^exercises/(?P<alias>[\w]+)?$', ['controller' => 'exercises', 'action' => 'index']);
+Router::add('^train/(?P<alias>[\w]+)?$', ['controller' => 'train', 'action' => 'index']);
 
 // default routes
 Router::add('^admin$', ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']);

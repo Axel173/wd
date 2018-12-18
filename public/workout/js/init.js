@@ -3,6 +3,11 @@
         $('.sidenav').sidenav();
     }); // end of document ready
 })(jQuery); // end of jQuery name space*/
+/*function hasOwnProperty(obj, prop) {
+    var proto = obj.__proto__ || obj.constructor.prototype;
+    return (prop in obj) &&
+        (!(prop in proto) || proto[prop] !== obj[prop]);
+}*/
 function progressPage() {
     progressBar = document.getElementById('progress');
     progressBar.style.width = "25%";
@@ -17,7 +22,9 @@ function progressPage() {
         progressBar.style.width = "100%";
     };
 }
+
 progressPage();
+
 function showErrorModal(title, body) {
     var elem = document.createElement('div');
     elem.innerHTML = '<div class="modal-content">\n' +
@@ -66,7 +73,6 @@ function hideOverlay() {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
         var res;
         jQuery('document').ready(function () {
@@ -98,46 +104,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'GET',
                 async: true,
                 cache: false,
-                dataType: 'json',
+                //dataType: 'json',
                 success: function (res) {
+                    console.log(res);
                     try {
-                        //jsonRes = JSON.parse(res);
-                        if (res) {
-
+                        res = JSON.parse(res);
+                        console.log(res);
+                        if (res && !res.hasOwnProperty('redirect')) {
                             $('.section:eq(0)').html(res.data.attributes.body);
+                            if (addEntry == true) {
+
+                                var stateData = {
+                                    "location": url,
+                                    "title": res.data.attributes.title
+                                };
+                                console.log(stateData);
+
+                                // Add History Entry using pushState
+                                history.pushState(stateData, '', url);
+                                document.title = res.data.attributes.title;
+                            }
+                            M.AutoInit();
+                            progressBar.style.width = "50%";
+
+                            var autocompleteElems = document.querySelectorAll('.autocomplete');
+                            var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
+                                minLength: 3,
+                                limit: 5,
+                                data: {
+                                    "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
+                                },
+                            });
+                        } else {
+                            getContent(res.redirect, addEntry);
                         }
 
-                        if (addEntry == true) {
-
-                            var stateData = {
-                                "location": url,
-                                "title": res.data.attributes.title
-                            };
-                            console.log(stateData);
-
-                            // Add History Entry using pushState
-                            history.pushState(stateData, '', url);
-                            document.title = res.data.attributes.title;
-                        }
-
-                        progressBar.style.width = "50%";
-
-                        var autocompleteElems = document.querySelectorAll('.autocomplete');
-                        var autocompleteInstances = M.Autocomplete.init(autocompleteElems, {
-                            minLength: 3,
-                            limit: 5,
-                            data: {
-                                "Попеременные сгибания рук с гантелями": '/uploads/images/exercises/poperemennoe-sgibanie.jpg'
-                            },
-                        });
 
                     } catch (err) {
                         showErrorModal('Произошла ошибка', err);
+                        console.log(res.redirect);
                         // обработка ошибки
                     }
                 },
                 error: function (jqxhr, status, errorMsg) {
                     showErrorModal('Не получилось выполнить запрос', 'Статус: ' + status + '<br> Ошибка: ' + errorMsg);
+                    //console.log();
                 },
                 complete: function (data) {
                     hideOverlay();

@@ -6,13 +6,12 @@ namespace app\controllers;
  * Description of Main
  *
  */
-class TraningsController extends AuthController
+class TrainController extends AuthController
 {
 
     public function indexAction()
     {
-
-        $this->setTitle('Workout :: Тренировки');
+        $this->setTitle('Workout :: Программы тренировок');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
 
@@ -20,7 +19,7 @@ class TraningsController extends AuthController
             $template = $this->getTmp('index');
             $data = array(
                 'data' => array(
-                    'type' => 'trainings',
+                    'type' => 'train',
                     'attributes' => array(
                         "title" => $this->title,
                         "body" => $template,
@@ -32,5 +31,4 @@ class TraningsController extends AuthController
             die();
         }
     }
-
 }

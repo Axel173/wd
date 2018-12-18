@@ -68,6 +68,23 @@ class PersonalController extends AppController
         $this->setTitle('Workout :: Регистрация');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
+
+        if ($this->isAjax()) {
+            $template = $this->getTmp('reg');
+            $data = array(
+                'data' => array(
+                    'type' => 'login',
+                    'attributes' => array(
+                        "title" => $this->title,
+                        "body" => $template,
+                    ),
+                ),
+
+            );
+            echo json_encode($data);
+            die();
+        }
+
         if (!empty($_POST)) {
             $personal = new Personal();
             $data = $_POST;
@@ -198,9 +215,26 @@ class PersonalController extends AppController
             if (($_GET['auth'] == 'vk'))
                 $this->authVk();
         }
+
         $this->setTitle('Workout :: Вход');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
+
+        if ($this->isAjax()) {
+            $template = $this->getTmp('login');
+            $data = array(
+                'data' => array(
+                    'type' => 'login',
+                    'attributes' => array(
+                        "title" => $this->title,
+                        "body" => $template,
+                    ),
+                ),
+
+            );
+            echo json_encode($data);
+            die();
+        }
     }
 
     public function logoutAction()

@@ -40,7 +40,7 @@
                     <div class="exercise col s12 xl3 l6 m6">
                         <div class="card hoverable">
                             <div class="card-image "><a class="ajax" href="/exercise/<?= $exercise['alias'] ?>"><img
-                                            class="bloc_center"
+                                            class="bloc_center responsive-img"
                                             src="/uploads/images/exercises/<?= $exercise['preview_img'] !== '' ? $exercise['preview_img'] : $exercise['main_img'] ?>"></a>
                             </div>
                             <li tabindex="-1" class="divider"></li>

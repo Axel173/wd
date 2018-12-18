@@ -9,7 +9,7 @@ use fw\libs\Pagination;
  * Description of Main
  *
  */
-class ExercisesController extends AppController
+class ExercisesController extends AuthController
 {
     private $cache_time = 1;
 
@@ -21,10 +21,6 @@ class ExercisesController extends AppController
         $this->setTitle('Workout :: Упражнения');
         $this->setMeta('description', 'Описание страницы');
         $this->setMeta('keywords', 'Ключевые слова');
-
-        if (!$this->is_auth) {
-            redirect('/personal/login');
-        }
 
         if (isset($this->route['alias'])) {
             $alias = clear($this->route['alias']);
